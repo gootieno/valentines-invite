@@ -45,7 +45,7 @@ window.onload = () => {
     catHeart.classList.add("active");
     createHearts();
   });
-  SHA256:2yiSf5g7Uq9c3EU5xyWaGfyJgdTFh2byQthpoWx3jeY
+
 
   noButton.addEventListener("click", () => {
     const cardMessage = document.getElementById("card-message");
