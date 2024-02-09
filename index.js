@@ -46,7 +46,6 @@ window.onload = () => {
     createHearts();
   });
 
-
   noButton.addEventListener("click", () => {
     const cardMessage = document.getElementById("card-message");
     cardMessage.innerText = "This was a cat-astrophe..";
@@ -82,6 +81,7 @@ window.onload = () => {
 
   const cardContainerCover = document.getElementById("card-container-cover");
   const shootHeartsContainer = document.createElement("div");
+  shootHeartsContainer.classList.add("shoot-hearts-container");
   shootHeartsContainer.style.position = "fixed";
   shootHeartsContainer.style.border = "2px solid red";
   cardContainerCover.appendChild(shootHeartsContainer);

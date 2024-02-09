@@ -255,8 +255,8 @@ body {
         transition: top 2s 1s ease;
     }
 
-    .shoot-hearts{
-        left: 20%;
+    .shoot-hearts-container{
+        left: 45%;
     }
 
     #cat-cry {
