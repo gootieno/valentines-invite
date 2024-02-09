@@ -200,6 +200,12 @@ body {
     transition: 3s linear;
 }
 
+#player {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
 
 
 @keyframes rain {

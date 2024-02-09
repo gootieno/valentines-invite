@@ -1,6 +1,38 @@
 let rainInterval;
 
+var player;
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player("player", {
+    height: "0", // Set to '0' to hide the video; '1' for minimal visibility
+    width: "0",
+    videoId: "xqfckiR2lfs", // Your YouTube video ID
+    playerVars: {
+      autoplay: 0, // Don't autoplay on load
+      controls: 0, // No controls
+      showinfo: 0,
+      modestbranding: 1,
+      loop: 1,
+      fs: 0,
+      cc_load_policy: 0,
+      iv_load_policy: 3,
+      autohide: 0,
+    },
+    events: {
+      onReady: onPlayerReady,
+    },
+  });
+}
+
+function onPlayerReady(event) {
+  // Player is ready
+}
+
 window.onload = () => {
+  let tag = document.createElement("script");
+  tag.src = "https://www.youtube.com/iframe_api";
+  let firstScriptTag = document.getElementsByTagName("script")[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
   const yesButton = document.getElementById("yes");
   const yesCat = document.getElementById("cat-yes");
 
@@ -28,6 +60,10 @@ window.onload = () => {
   noButton.addEventListener("mouseleave", hideNoCat);
 
   yesButton.addEventListener("click", () => {
+    if (player && player.playVideo) {
+      player.playVideo();
+    }
+
     noCat.classList.remove("active");
 
     const cardMessage = document.getElementById("card-message");
@@ -47,6 +83,10 @@ window.onload = () => {
   });
 
   noButton.addEventListener("click", () => {
+    if (player && player.loadVideoById) {
+      player.loadVideoById({ videoId: "gJmuoOiZuNY" });
+      player.playVideo();
+    }
     const cardMessage = document.getElementById("card-message");
     cardMessage.innerText = "This was a cat-astrophe..";
 
