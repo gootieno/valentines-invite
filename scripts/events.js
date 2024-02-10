@@ -125,7 +125,7 @@ export const handleShowCat = () => {
     setTimeout(() => {
       catImageContainer.classList.add("show-cat");
       catImageContainer.style.top = "0%";
-      catImageContainer.style.transitionDuration = "3s";
+      catImageContainer.style.transition = "top 3s ease";
       catImage.setAttribute("src", "../images/cat-cry.png");
     }, 400);
 
