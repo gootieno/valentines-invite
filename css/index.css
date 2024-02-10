@@ -5,8 +5,6 @@
     box-sizing: border-box;
 }
 
-
-
 body {
     height:100vh;
     background-color: #E9E5F5;
@@ -36,12 +34,41 @@ body {
     align-items: center;
 }
 
+#cat-image-container {
+    border: 2px solid red;
+    width: 420px;
+    height: 300px;
+    /* top: 25%; */
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+
+#cat-image {
+    width: 50%;
+    position: absolute;
+    top: 0;
+}
+
+.cat-default {
+    top: 25%;
+}
+
+.hide-cat {
+    top: 25%;
+    transition: top 0.5s 0s ease;
+}
+
+.show-cat {
+    top: 5%;
+    transition: top 0.5s 0s ease;
+}
+
 #card-container{
-    position: relative;
+    position: absolute;
     display: flex;
     width: fit-content;
-    top: 2%;
-    /* z-index: 2; */
+    top: 25%;
 }
 
 #card-container-cover {

@@ -65,6 +65,7 @@ window.onload = () => {
     }
 
     noCat.classList.remove("active");
+    yesButton.innerText = "More Hearts";
 
     const cardMessage = document.getElementById("card-message");
     cardMessage.innerText = "Purrfect!";
@@ -76,7 +77,7 @@ window.onload = () => {
     noButton.removeEventListener("mouseleave", hideNoCat);
 
     noButton.classList.add("hidden");
-
+    yesButton.innerText = 'Click Me'
     const catHeart = document.getElementById("cat-heart");
     catHeart.classList.add("active");
     createHearts();
