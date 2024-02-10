@@ -19,10 +19,10 @@ export const handleShowCat = () => {
   const showYesCat = (e) => {
     if (lastInteractionWasTouch) return;
     setTimeout(() => {
-      catImageContainer.classList.remove("hide-cat");
+      catImageContainer.style.top = "12%";
       catImageContainer.classList.add("show-cat");
       catImage.style.width = "50%";
-      catImage.setAttribute("src", "../images/cat-please.png");
+      catImage.setAttribute("src", "../images/cat-heart.png");
     }, 800);
   };
 
@@ -31,6 +31,7 @@ export const handleShowCat = () => {
   const hideYesCat = () => {
     catImageContainer.classList.add("hide-cat");
     catImageContainer.classList.remove("show-cat");
+    catImageContainer.style.top = "50%";
   };
   yesButton.addEventListener("mouseleave", hideYesCat);
 
@@ -40,6 +41,7 @@ export const handleShowCat = () => {
       catImageContainer.classList.remove("hide-cat");
       catImageContainer.classList.add("show-cat");
       catImage.style.width = "70%";
+      catImageContainer.style.top = "12%";
       catImage.setAttribute("src", "../images/cat-cry.png");
     }, 800);
   };
@@ -48,6 +50,7 @@ export const handleShowCat = () => {
   const hideNoCat = () => {
     catImageContainer.classList.add("hide-cat");
     catImageContainer.classList.remove("show-cat");
+    catImageContainer.style.top = "50%";
   };
 
   noButton.addEventListener("mouseleave", hideNoCat);
@@ -62,9 +65,7 @@ export const handleShowCat = () => {
   let showingHearts = false;
   const showHeartCat = () => {
     noButton.classList.add("hidden");
-    if (window.screen.width < 500) {
-      catImage.setAttribute("src", "../images/cat-heart.png");
-    }
+
     catImage.style.width = "50%";
 
     if (!showingHearts) {
@@ -78,10 +79,9 @@ export const handleShowCat = () => {
     showingHearts = true;
     catImageContainer.style.transitionDuration = "1s";
 
-    setTimeout(() => {
-      catImageContainer.classList.add("show-cat");
-      catImage.setAttribute("src", "../images/cat-heart.png");
-    }, 1200);
+    catImageContainer.style.top = "0%";
+    catImageContainer.classList.add("show-cat");
+    catImage.setAttribute("src", "../images/cat-heart.png");
   };
 
   yesButton.addEventListener("click", () => {
@@ -119,6 +119,8 @@ export const handleShowCat = () => {
     catImageContainer.classList.add("show-cat");
     catImageContainer.classList.remove("cat-default");
     catImageContainer.classList.remove("hide-cat");
+    catImageContainer.style.top = "0%";
+    catImageContainer.style.transitionDuration = "3s";
 
     noButton.classList.add("hidden");
     yesButton.classList.add("hidden");
