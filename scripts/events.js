@@ -127,7 +127,7 @@ export const handleShowCat = () => {
       catImageContainer.style.top = "0%";
       catImageContainer.style.transition = "top 3s ease";
       catImage.setAttribute("src", "../images/cat-cry.png");
-    }, 400);
+    }, 500);
 
     noButton.classList.add("hidden");
     yesButton.classList.add("hidden");
