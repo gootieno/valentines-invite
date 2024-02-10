@@ -8,7 +8,16 @@ export const handleShowCat = () => {
   const catImageContainer = document.getElementById("cat-image-container");
   const catImage = document.getElementById("cat-image");
   const transitionContainer = document.getElementById("transition-container");
-  const showYesCat = () => {
+
+  let lastInteractionWasTouch = false;
+
+  // Function to handle touch start to set the flag
+  const handleTouchStart = () => {
+    lastInteractionWasTouch = true;
+  };
+
+  const showYesCat = (e) => {
+    if (lastInteractionWasTouch) return;
     setTimeout(() => {
       catImageContainer.classList.remove("hide-cat");
       catImageContainer.classList.add("show-cat");
@@ -26,6 +35,7 @@ export const handleShowCat = () => {
   yesButton.addEventListener("mouseleave", hideYesCat);
 
   const showNoCat = () => {
+    if (lastInteractionWasTouch) return;
     setTimeout(() => {
       catImageContainer.classList.remove("hide-cat");
       catImageContainer.classList.add("show-cat");
@@ -42,11 +52,20 @@ export const handleShowCat = () => {
 
   noButton.addEventListener("mouseleave", hideNoCat);
 
+  document.addEventListener("touchstart", handleTouchStart);
+
+  // Reset the touch interaction flag on mousemove to ensure mouse interactions are detected correctly
+  document.addEventListener("mousemove", () => {
+    lastInteractionWasTouch = false;
+  });
+
   let showingHearts = false;
   const showHeartCat = () => {
     noButton.classList.add("hidden");
-    if (window.innerWidth < 500)
+    if (window.screen.width < 500) {
       catImage.setAttribute("src", "../images/cat-heart.png");
+    }
+    catImage.style.width = "50%";
 
     if (!showingHearts) {
       catImageContainer.classList.remove("show-cat");
@@ -58,7 +77,6 @@ export const handleShowCat = () => {
     }
     showingHearts = true;
     catImageContainer.style.transitionDuration = "1s";
-    catImage.style.width = "60%";
 
     setTimeout(() => {
       catImageContainer.classList.add("show-cat");
@@ -70,6 +88,9 @@ export const handleShowCat = () => {
     if (player && player.playVideo) {
       player.playVideo();
     }
+
+    yesButton.innerText = "Shoot Hearts!";
+    yesButton.style.width = "100%";
 
     yesButton.removeEventListener("mouseenter", showYesCat);
     yesButton.removeEventListener("mouseleave", hideYesCat);

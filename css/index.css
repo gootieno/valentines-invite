@@ -3,7 +3,9 @@
 * {
     margin: 0;
     box-sizing: border-box;
+    
 }
+
 
 body {
     height:100vh;
@@ -211,6 +213,7 @@ body {
     width: 100%;
 }
 
+
 #hearts-container{
     position: absolute;
     width: 100%;
@@ -303,11 +306,6 @@ body {
         z-index: -4;
     }
     
-    #cat-heart.active {
-        top: 12%;
-        visibility: visible;
-        transition: top 2s 1s ease;
-    }
 
     #hearts-container{
         left: 42%
