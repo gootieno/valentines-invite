@@ -216,7 +216,7 @@ body {
 
 #hearts-container{
     position: absolute;
-    width: 100%;
+    width: 50%;
 }
 
 .heart {
@@ -308,7 +308,7 @@ body {
     
 
     #hearts-container{
-        left: 42%
+        width: 50%;
     }
 
     #cat-cry {

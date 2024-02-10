@@ -141,7 +141,7 @@ export const handleShowCat = () => {
     const heart = document.createElement("img");
     heart.classList.add("shoot-heart");
 
-    heart.style.left = Math.random() * 25 + "vw";
+    heart.style.left = Math.random() * 90 + "%";
     heart.style.animationDuration = "0.5s";
 
     heart.src = "../images/heart.png";
