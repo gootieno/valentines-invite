@@ -119,13 +119,14 @@ export const handleShowCat = () => {
     noButton.removeEventListener("mouseenter", showNoCat);
     noButton.removeEventListener("mouseleave", hideNoCat);
 
-    catImageContainer.classList.add("show-cat");
     catImageContainer.classList.remove("cat-default");
     catImageContainer.classList.remove("hide-cat");
 
     setTimeout(() => {
+      catImageContainer.classList.add("show-cat");
       catImageContainer.style.top = "0%";
       catImageContainer.style.transitionDuration = "3s";
+      catImage.setAttribute("src", "../images/cat-cry.png");
     }, 400);
 
     noButton.classList.add("hidden");
