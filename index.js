@@ -77,7 +77,7 @@ window.onload = () => {
     noButton.removeEventListener("mouseleave", hideNoCat);
 
     noButton.classList.add("hidden");
-    yesButton.innerText = 'Click Me'
+    yesButton.innerText = "Click Me";
     const catHeart = document.getElementById("cat-heart");
     catHeart.classList.add("active");
     createHearts();

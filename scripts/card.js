@@ -3,11 +3,15 @@ import { setCatImage } from "./cat-image.js";
 export const createCardImageContainer = () => {
   const mainContainer = document.getElementById("main-container");
   const catImageContainer = document.createElement("div");
-
+  const transitionContainer = document.createElement("div");
+  
+  transitionContainer.setAttribute("id", "transition-container");
   catImageContainer.setAttribute("id", "cat-image-container");
   catImageContainer.classList.add("hide-cat");
   catImageContainer.classList.add("cat-default");
-  mainContainer.appendChild(catImageContainer);
+
+  transitionContainer.appendChild(catImageContainer);
+  mainContainer.appendChild(transitionContainer);
   createCardContainer();
   setCatImage();
 };
