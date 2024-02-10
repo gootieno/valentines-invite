@@ -35,7 +35,6 @@ body {
 }
 
 #cat-image-container {
-    border: 2px solid red;
     width: 100%;
     height: 100%;
     /* top: 25%; */
@@ -52,7 +51,6 @@ body {
     justify-content: center;
     align-items: center;
     top: 10%;
-    border: 2px solid blue;
 }
 
 #cat-image {
