@@ -19,11 +19,11 @@ export const handleShowCat = () => {
   const showYesCat = (e) => {
     if (lastInteractionWasTouch) return;
     setTimeout(() => {
-      catImageContainer.style.top = "12%";
+      catImageContainer.style.top = "15%";
       catImageContainer.classList.add("show-cat");
       catImage.style.width = "50%";
       catImage.setAttribute("src", "../images/cat-heart.png");
-    }, 800);
+    }, 400);
   };
 
   yesButton.addEventListener("mouseenter", showYesCat);
@@ -35,15 +35,16 @@ export const handleShowCat = () => {
   };
   yesButton.addEventListener("mouseleave", hideYesCat);
 
-  const showNoCat = () => {
+  const showNoCat = (e) => {
     if (lastInteractionWasTouch) return;
+
     setTimeout(() => {
       catImageContainer.classList.remove("hide-cat");
       catImageContainer.classList.add("show-cat");
       catImage.style.width = "70%";
-      catImageContainer.style.top = "12%";
+      catImageContainer.style.top = "15%";
       catImage.setAttribute("src", "../images/cat-cry.png");
-    }, 800);
+    }, 400);
   };
   noButton.addEventListener("mouseenter", showNoCat);
 
@@ -77,18 +78,20 @@ export const handleShowCat = () => {
       createHearts();
     }
     showingHearts = true;
-    catImageContainer.style.transitionDuration = "1s";
 
-    catImageContainer.style.top = "0%";
-    catImageContainer.classList.add("show-cat");
-    catImage.setAttribute("src", "../images/cat-heart.png");
+    setTimeout(() => {
+      catImageContainer.style.transitionDuration = "2s";
+      catImageContainer.style.top = "0%";
+      catImageContainer.classList.add("show-cat");
+      catImage.setAttribute("src", "../images/cat-heart.png");
+    }, 500);
   };
 
-  yesButton.addEventListener("click", () => {
+  yesButton.addEventListener("click", (e) => {
     if (player && player.playVideo) {
       player.playVideo();
     }
-
+    console.log(e.type);
     yesButton.innerText = "Shoot Hearts!";
     yesButton.style.width = "100%";
 
@@ -119,8 +122,11 @@ export const handleShowCat = () => {
     catImageContainer.classList.add("show-cat");
     catImageContainer.classList.remove("cat-default");
     catImageContainer.classList.remove("hide-cat");
-    catImageContainer.style.top = "0%";
-    catImageContainer.style.transitionDuration = "3s";
+
+    setTimeout(() => {
+      catImageContainer.style.top = "0%";
+      catImageContainer.style.transitionDuration = "3s";
+    }, 400);
 
     noButton.classList.add("hidden");
     yesButton.classList.add("hidden");
